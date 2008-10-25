@@ -1,0 +1,12 @@
+{% extends "piggy/base.html" %}
+
+{% block content %}
+
+<h1>Piggy Bank</h1>
+<ul>
+{% for piggy in piggies %}
+	<li><a href="/piggy/{{piggy.id}}">{{piggy}}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

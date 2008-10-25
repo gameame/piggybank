@@ -1,12 +1,11 @@
-from piggy.bank.models import MyPiggy
-from piggy.bank.models import Currency
-from piggy.bank.models import Coin
+from piggy.bank.models import MyPiggy, Currency, Coin
 from django.contrib import admin
-
+from django.forms import ModelForm
+                
 class MyPiggyAdmin(admin.ModelAdmin):
     list_display = ("__unicode__", "deposit_str")
-    list_filter = ("user",)
-    #exclude = ('user', 'deposit')
+    list_filter = ("deposit",)
+    exclude = ['user', 'deposit']
     def save_model(self, request, obj, form, change):
         obj.deposit = 0
         obj.user = request.user
