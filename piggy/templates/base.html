@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{% block title %}Piggy Bank{% endblock %}</title>
+</head>
+<body>
+{% block header %}<h1><a href="/{{LANGUAGE_CODE}}">Piggy Bank</a></h1>{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% for lang in LANGUAGES %}
+<a href="/{{ lang.0 }}">{{ lang.1 }}</a>
+{% endfor %}
+
+</body>
+</html>

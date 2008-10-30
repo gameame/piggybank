@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-29 19:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: bank/models.py:14
+msgid "Currency"
+msgstr "Valuta"
+
+#: bank/models.py:15
+msgid "Currencies"
+msgstr "Valute"
+
+#: bank/models.py:29
+msgid ""
+"If you collect more money than you need or if you don't get enough money, "
+"money will go to this piggybank"
+msgstr ""
+"Se ricevi più soldi di quanti te ne servono o se non ne ricevi abbastanza, i "
+"soldi andranno a questo piggybank"
+
+#: bank/views.py:25
+msgid "oh oh"
+msgstr "oh oh"
+
+#: templates/detail.html:8
+#, python-format
+msgid ""
+"\n"
+"%(user)s has raised %(deposit)s%(simbol)s over %(target)s%(simbol)s he wants "
+"before %(month)s %(day)s, %(year)s to buy:\n"
+msgstr ""
+"\n"
+"%(user)s ha raccolto %(deposit)s%(simbol)s su %(target)s%(simbol)s che vuole "
+"entro il %(day)s %(month)s %(year)s per comprare:\n"
+
+#: templates/detail.html:12
+msgid "Give something you too:"
+msgstr "Dai qualcosa anche tu:"
+
+#: templates/home.html:6
+msgid "This is the home of Piggy Bank"
+msgstr "Questa è la home page di Piggy Bank"
+
+#: templates/home.html:9
+msgid "MyPiggy list"
+msgstr "Lista di MyPiggy"
+
+#: templates/home.html:10
+msgid "About"
+msgstr "About"
+
+#: templates/index.html:5
+#, python-format
+msgid ""
+"\n"
+"Our only Piggy:\n"
+msgid_plural ""
+"\n"
+"Our %(counter)s Piggies:\n"
+msgstr[0] ""
+"\n"
+"Il nostro unico Piggy:\n"
+msgstr[1] ""
+"\n"
+"I nostri %(counter)s Piggies:\n"
+"\n"

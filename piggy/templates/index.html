@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+{% blocktrans count piggies|length as counter %}
+Our only Piggy:
+{% plural %}
+Our {{ counter }} Piggies:
+{% endblocktrans %}
+
+<ul>
+{% for piggy in piggies %}
+	<li><a href="{% url piggy.bank.views.detail LANGUAGE_CODE piggy.id %}">{{piggy}}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}
