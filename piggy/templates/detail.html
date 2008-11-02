@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Piggy Bank - {{piggy}}{% endblock %}
+
+{% block content %}
+
+<p>{% blocktrans with piggy.user as user and piggy.deposit as deposit and piggy.default_currency.simbol as simbol and piggy.target as target and piggy.deadline|date:"F" as month and piggy.deadline|date:"j" as day and piggy.deadline|date:"Y" as year%}
+{{user}} has raised {{deposit}}{{simbol}} over {{target}}{{simbol}} he wants before {{month}} {{day}}, {{year}} to buy:
+{% endblocktrans %}</p>
+<h2>{{piggy}}</h2>
+<p>{% trans "Give something you too:" %}</p>
+<p>
+{% for coin in piggy.default_currency.coin_set.all %}
+	<form action="{% url piggy.bank.views.donate LANGUAGE_CODE piggy.id %}" method="post">
+		<input type="hidden" value="{{coin.value}}" name="coin_value" />
+		<button><img src="/media/{{coin.icon}}" /></button>
+	</form>
+{% endfor %}
+</p>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<img src="/media/{{piggy.image}}" alt="{{piggy.user}}'s piggy bank for {{piggy}}" />
+
+{% endblock %}

@@ -3,13 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>{% block title %}Piggy Bank{% endblock %}</title>
-<style type="text/css">
-@IMPORT url("/piggy/media/css/style.css");
-</style>
 </head>
 <body>
+{% block header %}<h1><a href="/{{LANGUAGE_CODE}}">Piggy Bank</a></h1>{% endblock %}
 
 {% block content %}{% endblock %}
+
+{% for lang in LANGUAGES %}
+<a href="/{{ lang.0 }}">{{ lang.1 }}</a>
+{% endfor %}
 
 </body>
 </html>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<p>{% trans  "This is the home of Piggy Bank" %}</p>
+
+<ul>
+    <li><a href="{% url piggy.bank.views.index LANGUAGE_CODE %}">{% trans "MyPiggy list" %}</a></li>
+    <li><a href="/{{LANGUAGE_CODE}}/about">{% trans "About" %}</a></li>
+</ul>
+
+{% endblock %}

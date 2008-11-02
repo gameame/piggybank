@@ -1,15 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
+from transdb import TransCharField
+from django.utils.translation import ugettext_lazy as _
 
     
 class Currency(models.Model):
-    name = models.CharField(max_length = 50)
+    name = TransCharField(max_length = 50)
     code = models.CharField(max_length = 5, help_text="ISO 4217 code")
     simbol = models.CharField(max_length = 2)
     change_to_euro = models.DecimalField(max_digits = 10, decimal_places=2)
     
     class Meta:
-        verbose_name_plural = "Currencies"
+        verbose_name = _(u"Currency")
+        verbose_name_plural = _(u"Currencies")
     
     def __unicode__(self):
         return self.name
@@ -23,7 +26,7 @@ class MyPiggy(models.Model):
     deadline = models.DateField()
     image = models.ImageField(upload_to = "piggys")
     default_piggy = models.ForeignKey("self", blank=True, null=True,
-                                      help_text="If you collect more money than you need or if you don't get enough money, money will go to this piggybank")
+                                      help_text=_(u"If you collect more money than you need or if you don't get enough money, money will go to this piggybank"))
     
     class Meta:
         verbose_name_plural = "My Piggies"
