@@ -12,12 +12,13 @@
 <p>{% trans "Give something you too:" %}</p>
 <p>
 {% for coin in piggy.default_currency.coin_set.all %}
-	<form action="{% url piggy.bank.views.donate LANGUAGE_CODE piggy.id %}" method="post">
+	<form  class="coin" action="{% url piggy.bank.views.donate LANGUAGE_CODE piggy.id %}" method="post">
 		<input type="hidden" value="{{coin.value}}" name="coin_value" />
 		<button><img src="/media/{{coin.icon}}" /></button>
 	</form>
 {% endfor %}
 </p>
+<br/>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 <img src="/media/{{piggy.image}}" alt="{{piggy.user}}'s piggy bank for {{piggy}}" />
 
